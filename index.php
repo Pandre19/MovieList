@@ -6,8 +6,6 @@
     require_once("inc/Utility/UserDAO.class.php");
     require_once("inc/Utility/LoginManager.class.php");
 
-    session_start();
-
     if(LoginManager::verifyLogin()){
         // UserDAO::init();
         // $user = UserDAO::getUser($_SESSION['loggedin']);

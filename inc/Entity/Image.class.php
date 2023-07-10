@@ -3,7 +3,7 @@ class Image
 {
     private $id;
     private $name;
-    private $imageData;
+    private $image_data;
 
     public function getId()
     {
@@ -17,7 +17,7 @@ class Image
 
     public function getImageData()
     {
-        return $this->imageData;
+        return $this->image_data;
     }
 
 }
