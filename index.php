@@ -11,7 +11,7 @@
         // $user = UserDAO::getUser($_SESSION['loggedin']);
         header("Location: index.php");
     } else {
-        header("Location: userLogin.php");
+        header("Location: userRegister.php");
     }
 
 ?>
