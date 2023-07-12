@@ -88,7 +88,6 @@ class Page  {
                 <div class="card shadow" style="border-radius:10px;">
                     <div class="card-body p-5">
                     <h2 class="text-center mb-5">Register</h2>
-
                     <?php
                         // If errors exists, then display them
                         if(isset(Validate::$valid_status) && isset(Validate::$valid_status['errors'])){
@@ -103,7 +102,6 @@ class Page  {
                         }
                         }
                     ?>
-                    
                     <form action="" method="post">
                         <div class="form-outline mb-4">
                         <input type="text" id="username" name="username" class="form-control form-control-lg" placeholder="Username"
@@ -124,8 +122,58 @@ class Page  {
                         <button type="submit"
                             class="btn btn-btn-block btn-lg gradient-custom-4 text-white" style="background-color: #3a5a40;">Continue</button>
                         </div>
-                        <p class="text-center text-muted mt-4 mb-0">Have an account? <a href="#!"
+                        <p class="text-center text-muted mt-4 mb-0">Have an account? <a href="userLogin.php"
                             class="text-black">Login</a></p>
+                    </form>
+
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
+        </section>
+    <?php }
+
+    static function showLoginForm($validation_results = null) { ?>
+        <section class="vh-100 bg-image"
+        style="background-image: url('https://preview.redd.it/2jhtmqhg4mo81.png?width=1920&format=png&auto=webp&s=0d41709c3c478d2bcadfd8f2450271f175c0676f'); background-size: cover; background-position: center;">
+            <div class="h-100 container">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <div class="col-5">
+                <div class="card shadow" style="border-radius:10px;">
+                    <div class="card-body p-5">
+                    <h2 class="text-center mb-5">Log In</h2>
+                    <?php
+                        // If errors exists, then display them
+                        if(isset(Validate::$valid_status) && isset(Validate::$valid_status['errors'])){
+                        if(count(Validate::$valid_status['errors']) > 0) {
+                            echo '<ul class="">';
+                            foreach(Validate::$valid_status['errors'] as $name => $message){
+                            echo "<li style='color:red;'>{$message}</li>";
+                            error_log(date("Y-m-d H:i:s") . " - ERROR MESSAGE = " . $message . "\n", 3, 'log/error_log.txt');
+                            }
+                            error_log("\n", 3, 'log/error_log.txt');
+                            echo '</ul>';
+                        }
+                        }
+                    ?>
+                    <form action="" method="post">
+                        <div class="form-outline mb-4">
+                        <div class="form-outline mb-4">
+                        <input type="text" id="email" name="email" class="form-control form-control-lg" placeholder="Email"
+                            value=<?php echo array_key_exists('email', $validation_results) ?  (string) $validation_results['email'] : ''; ?>>
+                        </div>
+                        <div class="form-outline mb-4">
+                        <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Password"
+                            value=<?php echo array_key_exists('email', $validation_results) ?  (string) $validation_results['email'] : ''; ?>>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                        <button type="submit"
+                            class="btn btn-btn-block btn-lg gradient-custom-4 text-white" style="background-color: #3a5a40;">Continue</button>
+                        </div>
+                        <p class="text-center text-muted mt-4 mb-0">Are you new? <a href="userRegister.php"
+                            class="text-black">Register</a></p>
                     </form>
 
                     </div>
