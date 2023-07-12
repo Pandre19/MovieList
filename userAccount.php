@@ -31,4 +31,3 @@
 <?php
     Page::footer();
 ?>
-
