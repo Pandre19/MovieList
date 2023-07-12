@@ -1,0 +1,50 @@
+.index-title-wrapper {
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; */
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(190, 190, 190), rgb(129, 175, 132));
+    z-index: -1;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    z-index: 200;
+  }
+  
+  h1 {
+    font-size: 7rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+  
+  p {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  .btn-start {
+    margin-top: 1.5rem;
+  }
+  
+  .semicircle {
+    position: absolute;
+    z-index: -123;
+    top: 57%;
+    width: 100%;
+    height: 700px;
+    background: rgb(36, 36, 36);
+    border-radius: 50%;
+    margin-top: -50px;
+  }

@@ -7,11 +7,28 @@
     require_once("inc/Utility/LoginManager.class.php");
 
     if(LoginManager::verifyLogin()){
-        // UserDAO::init();
-        // $user = UserDAO::getUser($_SESSION['loggedin']);
-        header("Location: index.php");
+        // // UserDAO::init();
+        // // $user = UserDAO::getUser($_SESSION['loggedin']);
+        // header("Location: index.php");
+        Page::header("MoviesLists", true, "index.css");
     } else {
-        header("Location: userRegister.php");
+        // header("Location: userRegister.php");
+        Page::header("MoviesLists", false, "index.css");
     }
 
 ?>
+
+        <div class="index-title-wrapper">
+            <div class="semicircle"></div>
+            <div class="container">
+                <h1>MoviesLists</h1>
+                <p>Plan and edit your future experiences</p>
+                <a href="userRegister.php" class="btn btn-success btn-lg">For Movie Lovers</a>
+            </div>
+            
+        </div>
+
+<?php
+    Page::footer();
+?>
+
