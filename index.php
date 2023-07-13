@@ -18,7 +18,7 @@
 
 ?>
 
-        <div class="index-title-wrapper">
+        <div class="index-title-wrapper body">
             <div class="semicircle"></div>
             <div class="container">
                 <h1>MoviesLists</h1>

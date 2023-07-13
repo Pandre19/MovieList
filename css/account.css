@@ -1,0 +1,76 @@
+
+
+.account-wrapper {
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(190, 190, 190), rgb(129, 175, 132));
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 200;
+  }
+
+  .account-background {
+    background-color: rgb(36, 36, 36);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+  }
+
+  .quote {
+    text-align: center;
+    font-size: 1.3em;
+  }
+
+  .account-image {
+    width: 180px;
+    border-radius: 50%;
+    border: 5px solid #a3b18a;
+  }
+
+  .author {
+    text-align: center;
+  }
+
+  .account-left-side {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .account-right-side {
+    padding: 20px;
+    padding-left: 50px;
+    min-width: 500px;
+  }
+
+  .form-outline input{
+    border: 5px solid #a3b18a;
+  }
+
+  .form-outline label {
+    font-weight: 700;
+  }
+
+  .button-group {
+    width: 100%;
+  }
+
+  .button-group button {
+    width: 50%;
+  }
+
+  .btn-left {
+    border-radius: 20px 0 0 20px !important;
+  }
+
+  .btn-right {
+    border-radius:  0 20px 20px 0 !important;
+  }

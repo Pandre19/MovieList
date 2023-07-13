@@ -10,22 +10,62 @@
         // // UserDAO::init();
         // // $user = UserDAO::getUser($_SESSION['loggedin']);
         // header("Location: index.php");
-        Page::header("MoviesLists", true, "index.css");
+        Page::header("MoviesLists", true, "account.css");
     } else {
         // header("Location: userRegister.php");
-        Page::header("MoviesLists", true, "index.css");
+        Page::header("MoviesLists", true, "account.css");
     }
 
 ?>
 
-        <div class="index-title-wrapper">
-            <div class="semicircle"></div>
+        <div class="account-wrapper body-wrapper">
             <div class="container">
-                <h1>MoviesLists</h1>
-                <p>Plan and edit your future experiences</p>
-                <a href="userRegister.php" class="btn btn-success btn-lg">For Movie Lovers</a>
+                <div class="account-background">
+                    <div class="account-left-side">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Account Image" 
+                            class="account-image"> 
+                        <div class="quote=wrapper">
+                            <h3 class="quote">
+                                "The cinema has no boundary.<br>It is a ribbon of a dream"
+                            </h3>
+                            <p class="author">
+                                Orson Wells
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="solid">
+                    <div class="account-right-side">
+                    <form action="" method="post">
+                        <div class="form-outline mb-4">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" id="username" name="username" class="form-control form-control-lg" placeholder="Username"
+                                value="Username Testing">
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" id="email" name="email" class="form-control form-control-lg" placeholder="Email"
+                                value="Email Testing">
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Password"
+                                value="Password Testing">
+                        </div>
+                        <div class="d-flex mb-4 button-group">
+                            <button type="submit"
+                                class="btn text-white btn-left" style="background-color: #3a5a40;">Edit</button>
+                            <button type="submit"
+                                class="btn text-white btn-right" style="background-color: #a3b18a;">Save</button>
+                        </div>
+                        <div class="d-flex button-group">
+                            <button type="submit"
+                                class="btn text-white btn-left" style="background-color: #a3b18a;">Log Out</button>
+                            <button type="submit"
+                                class="btn text-white btn-right" style="background-color: #3a5a40;">Delete Account</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            
         </div>
 
 <?php

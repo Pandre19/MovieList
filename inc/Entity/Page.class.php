@@ -22,7 +22,7 @@ class Page  {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
         <!-- Reference:  https://getbootstrap.com/docs/5.3/components/navbar/-->
-        <nav class="navbar navbar-expand-lg bg-dark">
+        <nav class="navbar fixed-top navbar-expand-lg bg-dark">
             <div class="container-md">
                 <a class="navbar-brand text-white" href="index.php">MoviesList</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,7 +77,7 @@ class Page  {
     <?php }
 
     static function showRegisterForm($validation_results = null) { ?>
-        <section class="vh-100 bg-image"
+        <section class="vh-100 bg-image body"
         style="background-image: url('https://w.wallha.com/ws/1/vRs0PSJL.jpg'); background-size: cover; background-position: center;">
             <div class="h-100 container">
             <div class="h-100 d-flex align-items-center justify-content-center">
@@ -133,7 +133,7 @@ class Page  {
     <?php }
 
     static function showLoginForm($validation_results = null) { ?>
-        <section class="vh-100 bg-image"
+        <section class="vh-100 bg-image body"
         style="background-image: url('https://preview.redd.it/2jhtmqhg4mo81.png?width=1920&format=png&auto=webp&s=0d41709c3c478d2bcadfd8f2450271f175c0676f'); background-size: cover; background-position: center;">
             <div class="h-100 container">
             <div class="h-100 d-flex align-items-center justify-content-center">
@@ -156,7 +156,6 @@ class Page  {
                         }
                     ?>
                     <form action="" method="post">
-                        <div class="form-outline mb-4">
                         <div class="form-outline mb-4">
                         <input type="text" id="email" name="email" class="form-control form-control-lg" placeholder="Email"
                             value=<?php echo array_key_exists('email', $validation_results) ?  (string) $validation_results['email'] : ''; ?>>
