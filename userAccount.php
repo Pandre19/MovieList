@@ -38,30 +38,30 @@
                     <form action="" method="post">
                         <div class="form-outline mb-4">
                             <label for="username" class="form-label">Username</label>
-                            <input type="text" id="username" name="username" class="form-control form-control-lg" placeholder="Username"
+                            <input type="text" id="username" name="username" class="form-control form-control-lg" placeholder="Username" readonly
                                 value="Username Testing">
                         </div>
                         <div class="form-outline mb-4">
                             <label for="email" class="form-label">Email</label>
-                            <input type="text" id="email" name="email" class="form-control form-control-lg" placeholder="Email"
+                            <input type="text" id="email" name="email" class="form-control form-control-lg" placeholder="Email" readonly
                                 value="Email Testing">
                         </div>
                         <div class="form-outline mb-4">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Password"
+                            <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Password" readonly
                                 value="Password Testing">
                         </div>
                         <div class="d-flex mb-4 button-group">
                             <button type="submit"
-                                class="btn text-white btn-left" style="background-color: #3a5a40;">Edit</button>
+                                class="btn text-white btn-left">Edit</button>
                             <button type="submit"
-                                class="btn text-white btn-right" style="background-color: #a3b18a;">Save</button>
+                                class="btn text-white btn-right">Save</button>
                         </div>
                         <div class="d-flex button-group">
                             <button type="submit"
-                                class="btn text-white btn-left" style="background-color: #a3b18a;">Log Out</button>
+                                class="btn text-white btn-left">Log Out</button>
                             <button type="submit"
-                                class="btn text-white btn-right" style="background-color: #3a5a40;">Delete Account</button>
+                                class="btn text-white btn-right">Delete Account</button>
                         </div>
                     </form>
                 </div>

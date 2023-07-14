@@ -74,3 +74,11 @@
   .btn-right {
     border-radius:  0 20px 20px 0 !important;
   }
+
+  .btn-left, .btn-right{
+    background: #3a5a40 !important;
+  }
+
+  .btn-left:hover, .btn-right:hover{
+    background: #a3b18a !important;
+  }
