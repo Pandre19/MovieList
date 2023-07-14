@@ -42,7 +42,7 @@
                         <p class="list-text">
                             <span>Average Rating</span> 5.6
                         </p>
-                        <a href="#" class="button-list"><i class="fas fa-arrow-right"></i></a>
+                        <a href="singleList.php" class="button-list"><i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="list-container">
                         <h2 class="title-list">
@@ -57,7 +57,7 @@
                         <p class="list-text">
                             <span>Average Rating</span> 5.6
                         </p>
-                        <a href="#" class="button-list"><i class="fas fa-arrow-right"></i></a>
+                        <a href="singleList.php" class="button-list"><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
