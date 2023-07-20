@@ -121,3 +121,6 @@ Stack trace:
 [12-Jul-2023 22:15:22 Europe/Berlin] PHP Warning:  Undefined variable $isUserLoggedIn in F:\Semester4\BackEnd\Project\FinalProject\index.php on line 46
 [12-Jul-2023 22:15:22 Europe/Berlin] PHP Stack trace:
 [12-Jul-2023 22:15:22 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\index.php:0
+[19-Jul-2023 22:59:12 Europe/Berlin] PHP Warning:  Undefined variable $lastPage in F:\Semester4\BackEnd\Project\FinalProject\singleList.php on line 26
+[19-Jul-2023 22:59:12 Europe/Berlin] PHP Stack trace:
+[19-Jul-2023 22:59:12 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\singleList.php:0

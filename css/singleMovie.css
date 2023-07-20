@@ -1,0 +1,18 @@
+.body-wrapper {
+    margin-top: 50px;
+}
+
+.lists-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, rgb(190, 190, 190), rgb(129, 175, 132));
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    height: 100%;
+    padding: 30px;
+    gap: 20px;
+  }

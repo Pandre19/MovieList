@@ -38,7 +38,7 @@ class Page  {
                             <a class="nav-link active text-white" aria-current="page" href="userLists.php">Lists</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Recommendation</a>
+                            <a class="nav-link text-white" href="recommendation.php">Recommendation</a>
                             </li>
                             <li class="nav-item">
                             <a class="nav-link text-white" href="userAccount.php">Account</a>
