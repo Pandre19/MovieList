@@ -7,13 +7,9 @@
     require_once("inc/Utility/LoginManager.class.php");
 
     if(LoginManager::verifyLogin()){
-        // // UserDAO::init();
-        // // $user = UserDAO::getUser($_SESSION['loggedin']);
-        // header("Location: index.php");
         Page::header("MoviesLists", true, "index.css");
     } else {
-        header("Location: userRegister.php");
-        // Page::header("MoviesLists", true, "index.css");
+        Page::header("MoviesLists", false, "index.css");
     }
 
 ?>

@@ -155,3 +155,66 @@ Stack trace:
 [22-Jul-2023 21:21:12 Europe/Berlin] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hashed_password' in 'field list'
 [22-Jul-2023 22:23:25 Europe/Berlin] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hashed_password' in 'field list'
 [22-Jul-2023 22:30:41 Europe/Berlin] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hashed_password' in 'field list'
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP Warning:  Undefined array key "username" in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\Validate.class.php on line 12
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP Stack trace:
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:0
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP   2. Validate::validateRegisterForm() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:17
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP Warning:  Undefined array key "repassword" in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\Validate.class.php on line 45
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP Stack trace:
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:0
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP   2. Validate::validateRegisterForm() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:17
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\LoginManager.class.php on line 7
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP Stack trace:
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:0
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP   2. LoginManager::verifyLogin() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:35
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP   3. session_start() F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\LoginManager.class.php:7
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\LoginManager.class.php on line 14
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP Stack trace:
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:0
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP   2. LoginManager::verifyLogin() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:35
+[22-Jul-2023 23:07:30 Europe/Berlin] PHP   3. session_destroy() F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\LoginManager.class.php:14
+2023-07-22 23:07:30 - ERROR MESSAGE = Username must be 8 characters long
+2023-07-22 23:07:30 - ERROR MESSAGE = Please enter a valid email address.
+2023-07-22 23:07:30 - ERROR MESSAGE = Please confirm your password
+
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP Warning:  Undefined array key "username" in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\Validate.class.php on line 12
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP Stack trace:
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:0
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP   2. Validate::validateRegisterForm() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:17
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP Warning:  Undefined array key "repassword" in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\Validate.class.php on line 45
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP Stack trace:
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:0
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP   2. Validate::validateRegisterForm() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:17
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\LoginManager.class.php on line 7
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP Stack trace:
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:0
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP   2. LoginManager::verifyLogin() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:35
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP   3. session_start() F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\LoginManager.class.php:7
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\LoginManager.class.php on line 14
+[22-Jul-2023 23:16:59 Europe/Berlin] PHP Stack trace:
+[22-Jul-2023 23:17:00 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:0
+[22-Jul-2023 23:17:00 Europe/Berlin] PHP   2. LoginManager::verifyLogin() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:35
+[22-Jul-2023 23:17:00 Europe/Berlin] PHP   3. session_destroy() F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\LoginManager.class.php:14
+2023-07-22 23:17:00 - ERROR MESSAGE = Username must be 8 characters long
+2023-07-22 23:17:00 - ERROR MESSAGE = Please enter a valid email address.
+2023-07-22 23:17:00 - ERROR MESSAGE = Please confirm your password
+
+[22-Jul-2023 23:18:48 Europe/Berlin] PHP Warning:  Undefined array key "username" in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\Validate.class.php on line 69
+[22-Jul-2023 23:18:48 Europe/Berlin] PHP Stack trace:
+[22-Jul-2023 23:18:48 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:0
+[22-Jul-2023 23:18:48 Europe/Berlin] PHP   2. Validate::validateLoginForm() F:\Semester4\BackEnd\Project\FinalProject\userLogin.php:17
+2023-07-22 23:18:48 - ERROR MESSAGE = Username must be 8 characters long
+
+[23-Jul-2023 00:47:09 Europe/Berlin] PHP Warning:  Undefined array key "userName" in F:\Semester4\BackEnd\Project\FinalProject\userDelete.php on line 17
+[23-Jul-2023 00:47:09 Europe/Berlin] PHP Stack trace:
+[23-Jul-2023 00:47:09 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\userDelete.php:0
+[23-Jul-2023 00:47:09 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method PDOAgent::bing() in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\UserDAO.class.php:55
+Stack trace:
+#0 F:\Semester4\BackEnd\Project\FinalProject\userDelete.php(17): UserDAO::deleteUser(NULL)
+#1 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\UserDAO.class.php on line 55
+[23-Jul-2023 00:47:58 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method PDOAgent::bing() in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\UserDAO.class.php:55
+Stack trace:
+#0 F:\Semester4\BackEnd\Project\FinalProject\userDelete.php(17): UserDAO::deleteUser('Testing1000')
+#1 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\UserDAO.class.php on line 55

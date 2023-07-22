@@ -7,16 +7,12 @@
     require_once("inc/Utility/LoginManager.class.php");
 
     if(LoginManager::verifyLogin()){
-        // // UserDAO::init();
-        // // $user = UserDAO::getUser($_SESSION['loggedin']);
-        // header("Location: index.php");
         Page::header("MoviesLists", true, "account.css");
     } else {
         header("Location: userLogin.php");
     }
 
 ?>
-
         <div class="account-wrapper body-wrapper">
             <div class="container">
                 <div class="account-background">
@@ -59,13 +55,38 @@
                         <div class="d-flex button-group">
                             <a href="userLogout.php" type="submit"
                                 class="btn text-white btn-left">Log Out</a>
-                            <button type="submit"
-                                class="btn text-white btn-right">Delete Account</button>
+                            <!-- <button type="submit"
+                                class="btn text-white btn-right">Delete Account</button> -->
+                            <a type="button" class="btn text-white btn-right" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+                                Delete Account
+                            </a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+        
+        <!-- This is a modal from bootstrap -->
+        <div class="modal fade" id="deleteAccountModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-black" id="staticBackdropLabel">Delete Account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-black">
+                        Are you sure you want to delete the account?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href=<?= "userDelete.php?userName=". $_SESSION['loggedin']?> type="button" class="btn btn-primary">Understood</a>
+                </div>
+                </div>
+            </div>
+        </div>
+
 
 <?php
     Page::footer();

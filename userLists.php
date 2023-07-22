@@ -7,13 +7,10 @@
     require_once("inc/Utility/LoginManager.class.php");
 
     if(LoginManager::verifyLogin()){
-        // // UserDAO::init();
-        // // $user = UserDAO::getUser($_SESSION['loggedin']);
-        // header("Location: index.php");
         Page::header("MoviesLists", true, "lists.css");
     } else {
-        // header("Location: userRegister.php");
-        Page::header("MoviesLists", true, "lists.css");
+        header("Location: userLogin.php");
+        Page::header("MoviesLists", false, "lists.css");
     }
 
     $dummy_data = array("title"=>"Watch List","description" => "Movies to watch later","created_at"=>"12/12/2020");

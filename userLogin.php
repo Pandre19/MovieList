@@ -7,16 +7,31 @@
     require_once("inc/Utility/LoginManager.class.php");
     require_once("inc/Utility/Validate.class.php");
 
-    if(LoginManager::verifyLogin()){
-        // UserDAO::init();
-        // $user = UserDAO::getUser($_SESSION['loggedin']);
-        header("Location: index.php");
-    } 
+    UserDAO::init();
 
     Page::header("Register", false);
 
     if(!empty($_POST)){
-      $validation_errors=Validate::validateRegisterForm();
+      $validation_errors=Validate::validateLoginForm();
+
+        if(empty($validation_errors)){
+            $username = $_POST["username"];
+
+            //get the user object
+            $authUser = UserDAO::getUser($_POST['username']);
+
+            if($authUser && $authUser->verifyPassword($_POST['password'])){
+                // start the session
+                session_start();
+
+                // set the session that the user is logged in
+                $_SESSION['loggedin'] = $authUser->getUserName();
+            }
+        }
+    } 
+
+    if(LoginManager::verifyLogin()){
+        header("Location: userLists.php");
     } 
 
     Page::showLoginForm(Validate::$valid_status);

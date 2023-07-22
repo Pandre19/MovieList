@@ -32,7 +32,7 @@
         //Check if there is a user with the same username in database
         if(UserDAO::checkUserAlreadyExists($username)) {
             header("Location: userRegister.php?userExistsError=true");
-            Validate::$valid_status['errors']['userExists'] = "Please use other username. This username already exists";
+            
             exit();
         }
 

@@ -88,17 +88,21 @@ class Page  {
                     <h2 class="text-center mb-5">Register</h2>
                     <?php
                         // If errors exists, then display them
-                        
+                        echo '<ul class="">';
+                        if(isset($_GET['userExistsError'])) {
+                            echo "<li style='color:red;'>Please use other username. This username already exists</li>";
+                        }
                         if(isset(Validate::$valid_status) && isset(Validate::$valid_status['errors'])){
                         if(count(Validate::$valid_status['errors']) > 0) {
-                            echo '<ul class="">';
+                            
                             foreach(Validate::$valid_status['errors'] as $name => $message){
                             echo "<li style='color:red;'>{$message}</li>";
                             error_log(date("Y-m-d H:i:s") . " - ERROR MESSAGE = " . $message . "\n", 3, 'log/error_log.txt');
                             }
                             error_log("\n", 3, 'log/error_log.txt');
-                            echo '</ul>';
+                            
                         }
+                        echo '</ul>';
                         }
                     ?>
                     <form action="" method="post">
@@ -163,8 +167,8 @@ class Page  {
                     ?>
                     <form action="" method="post">
                         <div class="form-outline mb-4">
-                        <input type="text" id="email" name="email" class="form-control form-control-lg" placeholder="Email"
-                            value=<?php echo array_key_exists('email', $validation_results) ?  (string) $validation_results['email'] : ''; ?>>
+                        <input type="text" id="username" name="username" class="form-control form-control-lg" placeholder="Username"
+                            value=<?php echo array_key_exists('username', $validation_results) ?  (string) $validation_results['username'] : ''; ?>>
                         </div>
                         <div class="form-outline mb-4">
                         <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Password"

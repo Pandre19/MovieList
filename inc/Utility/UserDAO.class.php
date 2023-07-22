@@ -47,6 +47,20 @@ class UserDAO   {
         return self::$db->lastInsertedId();
     }
 
+    static function deleteUser($userName){
+        try {
+            $deleteQuery = "DELETE FROM User WHERE username = :username";
+
+            self::$db->query($deleteQuery);
+            self::$db->bind(":username", $userName);
+            self::$db->execute();
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            return false;
+        }
+        return true;
+    }
+
     static function setPassword($userName, $newPassword)    {
 
         return self::$db->rowCount();
