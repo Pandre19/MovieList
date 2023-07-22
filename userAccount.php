@@ -12,8 +12,7 @@
         // header("Location: index.php");
         Page::header("MoviesLists", true, "account.css");
     } else {
-        // header("Location: userRegister.php");
-        Page::header("MoviesLists", true, "account.css");
+        header("Location: userLogin.php");
     }
 
 ?>
@@ -58,8 +57,8 @@
                                 class="btn text-white btn-right">Save</button>
                         </div>
                         <div class="d-flex button-group">
-                            <button type="submit"
-                                class="btn text-white btn-left">Log Out</button>
+                            <a href="userLogout.php" type="submit"
+                                class="btn text-white btn-left">Log Out</a>
                             <button type="submit"
                                 class="btn text-white btn-right">Delete Account</button>
                         </div>

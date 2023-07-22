@@ -69,6 +69,7 @@
 
   .btn-left {
     border-radius: 20px 0 0 20px !important;
+    width: 50%;
   }
 
   .btn-right {

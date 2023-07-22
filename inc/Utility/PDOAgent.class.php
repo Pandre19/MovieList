@@ -24,7 +24,7 @@ class PDOAgent  {
         $this->className = $className;
 
         //Build the DSN
-        $this->dsn = "mysql:host={$this->host};dbname={$this->dbname};port={$this->dbport}";
+        $dsn = "mysql:host={$this->host};dbname={$this->dbname};port={$this->dbport};";
 
         //set PDO options
         $options = array(
@@ -34,7 +34,7 @@ class PDOAgent  {
 
         try {
             //Instantiate the PDO library inside our wrapper class
-            $this->pdo = new PDO($this->dsn, $this->user, $this->password, $options);
+            $this->pdo = new PDO($dsn, $this->user, $this->password, $options);
         } catch (Exception $ex) {
             $this->error = $ex->getMessage();
             echo $this->error;

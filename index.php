@@ -12,8 +12,8 @@
         // header("Location: index.php");
         Page::header("MoviesLists", true, "index.css");
     } else {
-        // header("Location: userRegister.php");
-        Page::header("MoviesLists", true, "index.css");
+        header("Location: userRegister.php");
+        // Page::header("MoviesLists", true, "index.css");
     }
 
 ?>
@@ -25,7 +25,6 @@
                 <p>Plan and edit your future experiences</p>
                 <a href="userRegister.php" class="btn btn-success btn-lg">For Movie Lovers</a>
             </div>
-            
         </div>
 
 <?php

@@ -124,3 +124,34 @@ Stack trace:
 [19-Jul-2023 22:59:12 Europe/Berlin] PHP Warning:  Undefined variable $lastPage in F:\Semester4\BackEnd\Project\FinalProject\singleList.php on line 26
 [19-Jul-2023 22:59:12 Europe/Berlin] PHP Stack trace:
 [19-Jul-2023 22:59:12 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\singleList.php:0
+[22-Jul-2023 20:40:41 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\UserDAO.class.php:28
+Stack trace:
+#0 F:\Semester4\BackEnd\Project\FinalProject\userRegister.php(30): UserDAO::checkUserAlreadyExists('Testing')
+#1 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\UserDAO.class.php on line 28
+[22-Jul-2023 20:41:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php:46
+Stack trace:
+#0 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\UserDAO.class.php(28): PDOAgent->query('SELECT * FROM U...')
+#1 F:\Semester4\BackEnd\Project\FinalProject\userRegister.php(32): UserDAO::checkUserAlreadyExists('Testing')
+#2 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php on line 46
+[22-Jul-2023 20:51:30 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php:46
+Stack trace:
+#0 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\UserDAO.class.php(28): PDOAgent->query('SELECT * FROM U...')
+#1 F:\Semester4\BackEnd\Project\FinalProject\userRegister.php(32): UserDAO::checkUserAlreadyExists('Testing')
+#2 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php on line 46
+[22-Jul-2023 20:56:39 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php:46
+Stack trace:
+#0 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\UserDAO.class.php(28): PDOAgent->query('SELECT * FROM U...')
+#1 F:\Semester4\BackEnd\Project\FinalProject\userRegister.php(32): UserDAO::checkUserAlreadyExists('Testing')
+#2 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php on line 46
+[22-Jul-2023 21:16:05 Europe/Berlin] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hashed_password' in 'field list'
+2023-07-22 21:16:05 - ERROR MESSAGE = Username must be 8 characters long
+2023-07-22 21:16:05 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+[22-Jul-2023 21:17:06 Europe/Berlin] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hashed_password' in 'field list'
+[22-Jul-2023 21:21:12 Europe/Berlin] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hashed_password' in 'field list'
+[22-Jul-2023 22:23:25 Europe/Berlin] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hashed_password' in 'field list'
+[22-Jul-2023 22:30:41 Europe/Berlin] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hashed_password' in 'field list'

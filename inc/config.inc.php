@@ -1,7 +1,7 @@
 <?php
 
 define("DB_HOST","localhost");
-define("DB_NAME", "movie_databases");
+define("DB_NAME", "movie_database");
 define("DB_USER", "root");
 define("DB_PASS","");
 define("DB_PORT", 3306);

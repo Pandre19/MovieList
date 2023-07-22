@@ -88,6 +88,7 @@ class Page  {
                     <h2 class="text-center mb-5">Register</h2>
                     <?php
                         // If errors exists, then display them
+                        
                         if(isset(Validate::$valid_status) && isset(Validate::$valid_status['errors'])){
                         if(count(Validate::$valid_status['errors']) > 0) {
                             echo '<ul class="">';
@@ -133,7 +134,11 @@ class Page  {
         </section>
     <?php }
 
-    static function showLoginForm($validation_results = null) { ?>
+    static function showLoginForm($validation_results = null) { 
+        if(isset($_GET['createdUser'])) {
+            echo '<script>alert("User has been created. Please login to your account.");</script>';
+        }
+        ?>
         <section class="vh-100 bg-image body"
         style="background-image: url('https://preview.redd.it/2jhtmqhg4mo81.png?width=1920&format=png&auto=webp&s=0d41709c3c478d2bcadfd8f2450271f175c0676f'); background-size: cover; background-position: center;">
             <div class="h-100 container">

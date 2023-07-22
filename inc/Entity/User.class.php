@@ -24,9 +24,9 @@ class User{
 
     // setter
 
-    // function verifyPassword(string $passwordToVerify){
-    //     return password_verify($passwordToVerify, $this->getPassword());
-    // }
+    function verifyPassword(string $passwordToVerify){
+        return password_verify($passwordToVerify, $this->getPassword());
+    }
 
 }
 
