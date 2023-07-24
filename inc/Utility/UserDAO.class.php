@@ -61,6 +61,21 @@ class UserDAO   {
         return true;
     }
 
+    static function updateUser(User $userToUpdate, $lastUsername) {
+        $updateQuery = "UPDATE User SET username = :userName, email = :Email, password = :Password";
+        $updateQuery .= " WHERE username = :lastUsername";
+
+        self::$db->query($updateQuery);
+        self::$db->bind(":userName", $userToUpdate->getUsername());
+        self::$db->bind(":Email", $userToUpdate->getEmail());
+        self::$db->bind(":Password", $userToUpdate->getPassword());
+        self::$db->bind(":lastUsername", $lastUsername);
+
+        self::$db->execute();
+        
+        return self::$db->rowCount();
+    }
+
     static function setPassword($userName, $newPassword)    {
 
         return self::$db->rowCount();

@@ -9,7 +9,7 @@
 
     UserDAO::init();
 
-    Page::header("Register", false);
+    Page::header("Login", false);
 
     if(!empty($_POST)){
       $validation_errors=Validate::validateLoginForm();

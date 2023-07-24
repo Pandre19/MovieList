@@ -70,7 +70,7 @@ class Page  {
     <?php }
 
     static function footer()    { ?>
-                    <footer class="bg-light text-center text-lg-start">
+                    <footer class="text-center text-lg-start">
                         <div class="text-center p-3 bg-dark"> © 2020 Copyright: MoviesList </div>
                     </footer>
                 </body>
@@ -154,15 +154,15 @@ class Page  {
                     <?php
                         // If errors exists, then display them
                         if(isset(Validate::$valid_status) && isset(Validate::$valid_status['errors'])){
-                        if(count(Validate::$valid_status['errors']) > 0) {
-                            echo '<ul class="">';
-                            foreach(Validate::$valid_status['errors'] as $name => $message){
-                            echo "<li style='color:red;'>{$message}</li>";
-                            error_log(date("Y-m-d H:i:s") . " - ERROR MESSAGE = " . $message . "\n", 3, 'log/error_log.txt');
+                            if(count(Validate::$valid_status['errors']) > 0) {
+                                echo '<ul class="">';
+                                foreach(Validate::$valid_status['errors'] as $name => $message){
+                                echo "<li style='color:red;'>{$message}</li>";
+                                error_log(date("Y-m-d H:i:s") . " - ERROR MESSAGE = " . $message . "\n", 3, 'log/error_log.txt');
+                                }
+                                error_log("\n", 3, 'log/error_log.txt');
+                                echo '</ul>';
                             }
-                            error_log("\n", 3, 'log/error_log.txt');
-                            echo '</ul>';
-                        }
                         }
                     ?>
                     <form action="" method="post">

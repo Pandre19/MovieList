@@ -1,7 +1,8 @@
 
 
 .account-wrapper {
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px 0;
     background: linear-gradient(to bottom, rgb(190, 190, 190), rgb(129, 175, 132));
   }
   
@@ -16,6 +17,7 @@
 
   .account-background {
     background-color: rgb(36, 36, 36);
+    margin-top: 60px;
     padding: 20px;
     border-radius: 20px;
     display: flex;
@@ -74,6 +76,7 @@
 
   .btn-right {
     border-radius:  0 20px 20px 0 !important;
+    width: 50%;
   }
 
   .btn-left, .btn-right{

@@ -218,3 +218,118 @@ Stack trace:
 #0 F:\Semester4\BackEnd\Project\FinalProject\userDelete.php(17): UserDAO::deleteUser('Testing1000')
 #1 {main}
   thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\UserDAO.class.php on line 55
+[24-Jul-2023 17:44:39 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method User::getEmail() in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:21
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 21
+[24-Jul-2023 19:47:55 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Validate" not found in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:36
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 36
+2023-07-24 19:48:22 - ERROR MESSAGE = Please enter a valid email address.
+2023-07-24 19:48:22 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 19:49:11 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:05:31 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:12:29 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:12:45 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:13:24 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:14:33 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:14:48 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:14:58 - ERROR MESSAGE = Please enter a valid email address.
+2023-07-24 20:14:58 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:15:18 - ERROR MESSAGE = Please enter a valid email address.
+2023-07-24 20:15:18 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:18:35 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:18:40 - ERROR MESSAGE = Username must be 8 characters long
+2023-07-24 20:18:40 - ERROR MESSAGE = Please enter a valid email address.
+2023-07-24 20:18:40 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:19:19 - ERROR MESSAGE = Username must be 8 characters long
+2023-07-24 20:19:19 - ERROR MESSAGE = Please enter a valid email address.
+2023-07-24 20:19:19 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:19:56 - ERROR MESSAGE = Username must be 8 characters long
+2023-07-24 20:19:56 - ERROR MESSAGE = Please enter a valid email address.
+2023-07-24 20:19:56 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:20:24 - ERROR MESSAGE = Username must be 8 characters long
+2023-07-24 20:20:24 - ERROR MESSAGE = Please enter a valid email address.
+2023-07-24 20:20:24 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:20:34 - ERROR MESSAGE = Username must be 8 characters long
+2023-07-24 20:20:34 - ERROR MESSAGE = Please enter a valid email address.
+2023-07-24 20:20:34 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:21:44 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:29:47 - ERROR MESSAGE = Username must be 8 characters long
+2023-07-24 20:29:47 - ERROR MESSAGE = Please enter a valid email address.
+2023-07-24 20:29:47 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:30:31 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:30:38 - ERROR MESSAGE = Username must be 8 characters long
+2023-07-24 20:30:38 - ERROR MESSAGE = Please enter a valid email address.
+2023-07-24 20:30:38 - ERROR MESSAGE = Password must be 10 characteres long, contain at least 1 number and 1 capital letter
+
+2023-07-24 20:33:42 - ERROR MESSAGE = Username must be 8 characters long
+2023-07-24 20:33:42 - ERROR MESSAGE = Please enter a valid email address.
+
+[24-Jul-2023 20:56:32 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'movie_database.reservation' doesn't exist
+[24-Jul-2023 20:59:47 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'movie_database.reservation' doesn't exist
+[24-Jul-2023 20:59:55 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'movie_database.reservation' doesn't exist
+[24-Jul-2023 21:05:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on bool in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:24
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
+[24-Jul-2023 21:08:58 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on bool in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:24
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
+[24-Jul-2023 21:09:01 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on bool in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:24
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
+[24-Jul-2023 21:09:02 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on bool in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:24
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
+[24-Jul-2023 21:09:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on bool in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:24
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
+[24-Jul-2023 21:09:07 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on bool in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:24
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
+[24-Jul-2023 21:09:09 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on bool in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:24
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
+[24-Jul-2023 21:09:16 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on bool in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:24
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
+[24-Jul-2023 21:09:18 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on bool in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:24
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
+[24-Jul-2023 21:09:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on bool in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:24
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
+[24-Jul-2023 21:11:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on bool in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:24
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
