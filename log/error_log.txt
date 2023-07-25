@@ -333,3 +333,8 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
+[25-Jul-2023 20:25:49 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_key_exists(): Argument #2 ($array) must be of type array, null given in F:\Semester4\BackEnd\Project\FinalProject\inc\Entity\Page.class.php:199
+Stack trace:
+#0 F:\Semester4\BackEnd\Project\FinalProject\userLists.php(76): Page::showCreateListForm()
+#1 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Entity\Page.class.php on line 199

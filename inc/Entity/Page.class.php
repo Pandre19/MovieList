@@ -190,4 +190,26 @@ class Page  {
 
         </section>
     <?php }
+
+    static function showCreateListForm($validation_results = null) {
+        ?>
+            <form action="" method="post">
+                <!-- Form -->
+                <div class="form-outline mb-4">
+                    <label for="list_name" class="form-label text-dark">List Name</label>
+                    <input type="text" id="list_name" name="list_name" class="form-control form-control-lg" placeholder="List Name">
+                </div>
+                <div class="form-outline mb-4">
+                    <label for="list_description" class="form-label text-dark">Description (max 255 characters)</label>
+                    <textarea type="text" id="list_description" name="list_description" rows="4" placeholder="Description"
+                        maxlength="255" class="form-control form-control-lg"></textarea>
+                </div>
+                <!-- Buttons -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        <?php
+    }
 }

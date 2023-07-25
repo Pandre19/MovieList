@@ -1,13 +1,13 @@
 <?php
 
-class UserDAO   {
+class MovieDAO   {
     private static $db;
 
     static function init()  {
-        self::$db = new PDOAgent("User");    
+        self::$db = new PDOAgent("Movie");    
     }    
 
-    static function getUser(string $userName)  {
+    static function getMovie(string $userName)  {
         $selectSQL = "SELECT * FROM User WHERE username = :username";
         self::$db->query($selectSQL);
         self::$db->bind(":username", $userName);
@@ -16,26 +16,14 @@ class UserDAO   {
 
     }
 
-    static function getUsers()  {
+    static function getMovies()  {
         $selectSQL = "SELECT * FROM User;";
         self::$db->query($selectSQL);
         self::$db->execute();
         return self::$db->getResultSet();    
     }
 
-    static function checkUserAlreadyExists($userName) {
-        $query = "SELECT * FROM User WHERE username = :username";
-        self::$db->query($query);
-        self::$db->bind(":username", $userName);
-        self::$db->execute();
-        if(self::$db->rowCount() > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    static function createUser($userName, $email, $hashedPassword) {
+    static function createMovie($userName, $email, $hashedPassword) {
         $query = "INSERT INTO User (username, email, password) VALUES (:userName, :Email, :hashed_Password)";
 
         self::$db->query($query);
@@ -47,7 +35,7 @@ class UserDAO   {
         return self::$db->lastInsertedId();
     }
 
-    static function deleteUser($userName){
+    static function deleteMovie($userName){
         try {
             $deleteQuery = "DELETE FROM User WHERE username = :username";
 
@@ -61,7 +49,7 @@ class UserDAO   {
         return true;
     }
 
-    static function updateUser(User $userToUpdate, $lastUsername) {
+    static function updateMovie(User $userToUpdate, $lastUsername) {
         $updateQuery = "UPDATE User SET username = :userName, email = :Email, password = :Password";
         $updateQuery .= " WHERE username = :lastUsername";
 
@@ -75,5 +63,4 @@ class UserDAO   {
         
         return self::$db->rowCount();
     }
-    
 }
