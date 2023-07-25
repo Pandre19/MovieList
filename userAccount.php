@@ -115,8 +115,7 @@
                                 value="">
                         </div>
                         <!-- Password message -->
-                        <p class="mb-4 text-white">*If password empty, It will not be changed</p>
-                        <?php echo ($isEditing == false) ?  '' : ''; ?>
+                        <?php echo ($isEditing == false) ?  '' : '<p class="mb-4 text-white">*If password empty, It will not be changed</p>'; ?>
                         <!-- Edit and Save buttons -->
                         <div class="d-flex mb-4 button-group">
                             <input type="hidden" name="action" value="edit">

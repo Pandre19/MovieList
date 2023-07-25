@@ -22,7 +22,9 @@
                     <h1 class="title-page">
                         Your Lists
                     </h1>
-                    <button type="submit" class="btn text-white btn-create-list">Create List</button>
+                    <a type="button" class="btn button text-white btn-create-list" data-bs-toggle="modal" data-bs-target="#createListModal">
+                        Create List
+                    </a>
                 </div>
                 
                 <div class="lists-container">
@@ -58,6 +60,28 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+
+
+        <!-- This is a modal from bootstrap. Create List Form -->
+        <div class="modal fade" id="createListModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5 text-black" id="staticBackdropLabel">Create List</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-black">
+                        Are you sure you want to delete the account?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href=<?= "userDelete.php?userName=". $_SESSION['loggedin']?> type="button" class="btn btn-primary">Create</a>
+                </div>
+                </div>
             </div>
         </div>
 

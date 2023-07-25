@@ -41,9 +41,15 @@ $dummy_data = array("title" => "Watch List", "description" => "Movies to watch l
             </div>
             
             <div class="list-group-button">
-                <button type="submit" class="btn text-white btn-create-list">Add Movie</button>
-                <button type="submit" class="btn text-white btn-create-list">Edit List</button>
-                <button type="submit" class="btn text-white btn-create-list">Delete List</button>
+                <a type="button" class="btn button text-white btn-create-list" data-bs-toggle="modal" data-bs-target="#addMovieModal">
+                    Add Movie
+                </a>
+                <a type="button" class="btn button text-white btn-create-list" data-bs-toggle="modal" data-bs-target="#editListModal">
+                    Edit List
+                </a>
+                <a type="button" class="btn button text-white btn-create-list" data-bs-toggle="modal" data-bs-target="#deleteListModal">
+                    Delete List
+                </a>
             </div>
         </div>
 
@@ -119,6 +125,69 @@ $dummy_data = array("title" => "Watch List", "description" => "Movies to watch l
 
     </div>
 </div>
+
+    <!-- This is a modal from bootstrap. Delete List Form  -->
+    <div class="modal fade" id="deleteListModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-black" id="staticBackdropLabel">Delete List</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-black">
+                    Are you sure you want to delete this list?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href=<?= "userDelete.php?userName=". $_SESSION['loggedin']?> type="button" class="btn btn-primary">Delete</a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This is a modal from bootstrap. Edit List Form  -->
+    <div class="modal fade" id="editListModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-black" id="staticBackdropLabel">Edit List</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-black">
+                    Are you sure you want to delete this list?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href=<?= "userDelete.php?userName=". $_SESSION['loggedin']?> type="button" class="btn btn-primary">Edit</a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This is a modal from bootstrap. Add Movie Form  -->
+    <div class="modal fade" id="addMovieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-black" id="staticBackdropLabel">Add Movie</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-black">
+                    Are you sure you want to delete this list?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href=<?= "userDelete.php?userName=". $_SESSION['loggedin']?> type="button" class="btn btn-primary">Add</a>
+            </div>
+            </div>
+        </div>
+    </div>
 
 <?php
 Page::footer();
