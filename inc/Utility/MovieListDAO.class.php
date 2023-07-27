@@ -7,40 +7,40 @@ class MovieListDAO   {
         self::$db = new PDOAgent("MovieList");    
     }    
 
-    static function getList(string $userName)  {
-        $selectSQL = "SELECT * FROM User WHERE username = :username";
+    static function getLists($userId)  {
+        $selectSQL = "SELECT * FROM MovieList WHERE user_id = :userId ORDER BY created_at DESC";
         self::$db->query($selectSQL);
-        self::$db->bind(":username", $userName);
+        self::$db->bind(":userId", $userId);
         self::$db->execute();
-        return self::$db->singleResult();
+        return self::$db->getResultSet();
 
     }
 
-    static function getLists()  {
-        $selectSQL = "SELECT * FROM User;";
+    static function getList($listId)  {
+        $selectSQL = "SELECT * FROM MovieList WHERE list_id = :listId;";
         self::$db->query($selectSQL);
+        self::$db->bind(":listId", $listId);
         self::$db->execute();
-        return self::$db->getResultSet();    
+        return self::$db->singleResult();    
     }
 
-    static function createList($userName, $email, $hashedPassword) {
-        $query = "INSERT INTO User (username, email, password) VALUES (:userName, :Email, :hashed_Password)";
+    static function createList($userId, $listName, $listDescription) {
+        $query = "INSERT INTO MovieList (user_id, list_name, list_description) VALUES (:userId, :listName, :listDescription)";
 
         self::$db->query($query);
-        self::$db->bind(":userName", $userName);
-        self::$db->bind(":Email", $email);
-        self::$db->bind(":hashed_Password", $hashedPassword);
+        self::$db->bind(":userId", $userId);
+        self::$db->bind(":listName", $listName);
+        self::$db->bind(":listDescription", $listDescription);
         self::$db->execute();
 
         return self::$db->lastInsertedId();
     }
 
-    static function deleteList($userName){
+    static function deleteList($listId){
         try {
-            $deleteQuery = "DELETE FROM User WHERE username = :username";
-
+            $deleteQuery = "DELETE FROM MovieList WHERE list_id = :listId";
             self::$db->query($deleteQuery);
-            self::$db->bind(":username", $userName);
+            self::$db->bind(":listId", $listId);
             self::$db->execute();
         } catch (Exception $e) {
             error_log($e->getMessage());
@@ -49,15 +49,14 @@ class MovieListDAO   {
         return true;
     }
 
-    static function updateList(User $userToUpdate, $lastUsername) {
-        $updateQuery = "UPDATE User SET username = :userName, email = :Email, password = :Password";
-        $updateQuery .= " WHERE username = :lastUsername";
+    static function updateList($listName, $listDescription, $listId) {
+        $updateQuery = "UPDATE MovieList SET list_name = :listName, list_description = :listDescription";
+        $updateQuery .= " WHERE list_id = :listId";
 
         self::$db->query($updateQuery);
-        self::$db->bind(":userName", $userToUpdate->getUsername());
-        self::$db->bind(":Email", $userToUpdate->getEmail());
-        self::$db->bind(":Password", $userToUpdate->getPassword());
-        self::$db->bind(":lastUsername", $lastUsername);
+        self::$db->bind(":listName", $listName);
+        self::$db->bind(":listDescription", $listDescription);
+        self::$db->bind(":listId", $listId);
 
         self::$db->execute();
         

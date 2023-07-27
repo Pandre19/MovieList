@@ -191,9 +191,23 @@ class Page  {
         </section>
     <?php }
 
-    static function showCreateListForm($validation_results = null) {
-        ?>
-            <form action="" method="post">
+    static function showCreateListForm() {
+        ?>  
+        <!-- Showing  -->
+            <?php
+            if (isset(Validate::$valid_status) && isset(Validate::$valid_status['errors'])) {
+                if (count(Validate::$valid_status['errors']) > 0) {
+                $error_message = "ERROR \n";
+                foreach (Validate::$valid_status['errors'] as $name => $message) {
+                    $error_message .= $message . "\n";
+                    error_log(date("Y-m-d H:i:s") . " - ERROR MESSAGE = " . $message . "\n", 3, 'log/error_log.txt');
+                }
+                $error_message_js = json_encode($error_message);
+                ?>
+                <script> alert(<?= $error_message_js ?>); </script>
+            <?php } } ?>
+
+            <form action="" method="post" id="modalFormCreateList">
                 <!-- Form -->
                 <div class="form-outline mb-4">
                     <label for="list_name" class="form-label text-dark">List Name</label>
@@ -206,8 +220,84 @@ class Page  {
                 </div>
                 <!-- Buttons -->
                 <div class="modal-footer">
+                    <input type="hidden" name="action" value="createList">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="fals">Create</button>
+                </div>
+            </form>
+        <?php
+    }
+
+    static function showEditListForm($listName, $listDescription) {
+        ?>  
+        <!-- Showing  -->
+            <?php
+            if (isset(Validate::$valid_status) && isset(Validate::$valid_status['errors'])) {
+                if (count(Validate::$valid_status['errors']) > 0) {
+                $error_message = "ERROR \n";
+                foreach (Validate::$valid_status['errors'] as $name => $message) {
+                    $error_message .= $message . "\n";
+                    error_log(date("Y-m-d H:i:s") . " - ERROR MESSAGE = " . $message . "\n", 3, 'log/error_log.txt');
+                }
+                $error_message_js = json_encode($error_message);
+                ?>
+                <script> alert(<?= $error_message_js ?>); </script>
+            <?php } } ?>
+
+            <form action="" method="post" id="modalFormEditList">
+                <!-- Form -->
+                <div class="form-outline mb-4">
+                    <label for="list_name" class="form-label text-dark">List Name</label>
+                    <input type="text" id="list_name" name="list_name" class="form-control form-control-lg" placeholder="List Name"
+                        value="<?= $listName ?>">
+                </div>
+                <div class="form-outline mb-4">
+                    <label for="list_description" class="form-label text-dark">Description (max 255 characters)</label>
+                    <textarea type="text" id="list_description" name="list_description" rows="5" placeholder="Description"
+                        maxlength="255" class="form-control form-control-lg"><?= $listDescription ?></textarea>
+                </div>
+                <!-- Buttons -->
+                <div class="modal-footer">
+                    <input type="hidden" name="action" value="editList">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </div>
+            </form>
+        <?php
+    }
+
+    static function showAddMovieForm() {
+        ?>  
+        <!-- Showing  -->
+            <?php
+            if (isset(Validate::$valid_status) && isset(Validate::$valid_status['errors'])) {
+                if (count(Validate::$valid_status['errors']) > 0) {
+                $error_message = "ERROR \n";
+                foreach (Validate::$valid_status['errors'] as $name => $message) {
+                    $error_message .= $message . "\n";
+                    error_log(date("Y-m-d H:i:s") . " - ERROR MESSAGE = " . $message . "\n", 3, 'log/error_log.txt');
+                }
+                $error_message_js = json_encode($error_message);
+                ?>
+                <script> alert(<?= $error_message_js ?>); </script>
+            <?php } } ?>
+
+            <form action="" method="post" id="modalFormAddMovie">
+                <!-- Form -->
+                <div class="form-outline mb-4">
+                    <label for="list_name" class="form-label text-dark">List Name</label>
+                    <input type="text" id="list_name" name="list_name" class="form-control form-control-lg" placeholder="List Name">
+                </div>
+                <div class="form-outline mb-4">
+                    <label for="list_description" class="form-label text-dark">Description (max 255 characters)</label>
+                    <textarea type="text" id="list_description" name="list_description" rows="4" placeholder="Description"
+                        maxlength="255" class="form-control form-control-lg"></textarea>
+                </div>
+                <!-- Buttons -->
+                <div class="modal-footer">
+                    <input type="hidden" name="action" value="editList">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Edit</button>
                 </div>
             </form>
         <?php

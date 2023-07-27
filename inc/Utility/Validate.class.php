@@ -153,6 +153,32 @@ class Validate{
         return $errors;
     }
 
+    static function validateCreateListForm() {
+        unset($valid_status);
+        $errors = array();
+        
+        //Validate the username
+        if(strlen(strip_tags($_POST['list_name'])) >= 1) {
+            self::$valid_status['list_name'] = strip_tags($_POST['list_name']);
+        } else{
+            self::$valid_status['list_name'] = null;
+            $errors['list_name'] = 'List Name is required.';
+        }
+
+        //Validate the username
+        if(strlen(strip_tags($_POST['list_description'])) >= 1) {
+            self::$valid_status['list_description'] = strip_tags($_POST['list_description']);
+        } else{
+            self::$valid_status['list_description'] = null;
+            $errors['list_description'] = 'List Description is required.';
+        }
+
+
+        self::$valid_status['errors'] = $errors;
+        
+        return $errors;
+    }
+
     static function validateImage(){
         unset($valid_status);
     }

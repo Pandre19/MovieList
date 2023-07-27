@@ -13,7 +13,14 @@ class UserDAO   {
         self::$db->bind(":username", $userName);
         self::$db->execute();
         return self::$db->singleResult();
+    }
 
+    static function getUserById(int $userId)  {
+        $selectSQL = "SELECT * FROM User WHERE user_id = :userId";
+        self::$db->query($selectSQL);
+        self::$db->bind(":userId", $userId);
+        self::$db->execute();
+        return self::$db->singleResult();
     }
 
     static function getUsers()  {

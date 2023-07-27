@@ -92,7 +92,6 @@ class PDOAgent  {
 
     //Return multiple results, but in one class
     public function getResultSet()  {
-
         return $this->stmt->fetchAll(PDO::FETCH_CLASS, $this->className);
     }
 

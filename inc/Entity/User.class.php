@@ -3,14 +3,14 @@
 class User{
 
     // attributes
-    private $id = 0;
+    private $user_id = 0;
     private $username ="";
     private $email = "";
     private $password = "";
 
     // getters
     function getId() : int{
-        return $this->id;
+        return $this->user_id;
     }
     function getUsername(): string{
         return $this->username;
