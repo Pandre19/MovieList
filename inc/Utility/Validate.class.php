@@ -157,7 +157,7 @@ class Validate{
         unset($valid_status);
         $errors = array();
         
-        //Validate the username
+        //Validate the list name
         if(strlen(strip_tags($_POST['list_name'])) >= 1) {
             self::$valid_status['list_name'] = strip_tags($_POST['list_name']);
         } else{
@@ -165,7 +165,7 @@ class Validate{
             $errors['list_name'] = 'List Name is required.';
         }
 
-        //Validate the username
+        //Validate the list description
         if(strlen(strip_tags($_POST['list_description'])) >= 1) {
             self::$valid_status['list_description'] = strip_tags($_POST['list_description']);
         } else{
@@ -179,7 +179,20 @@ class Validate{
         return $errors;
     }
 
-    static function validateImage(){
+    static function validateAddMovieForm() {
         unset($valid_status);
+        $errors = array();
+        
+        //Validate the Movie name
+        if(strlen(strip_tags($_POST['movie_name'])) >= 1) {
+            self::$valid_status['movie_name'] = strip_tags($_POST['movie_name']);
+        } else{
+            self::$valid_status['movie_name'] = null;
+            $errors['movie_name'] = 'Movie Name is required.';
+        }
+
+        self::$valid_status['errors'] = $errors;
+        
+        return $errors;
     }
 }

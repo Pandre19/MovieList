@@ -501,3 +501,70 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in F:\Semester4\BackEnd\Project\FinalProject\singleList.php on line 52
+2023-07-27 18:49:36 - ERROR MESSAGE = List Name is required.
+[28-Jul-2023 00:53:08 Europe/Berlin] PHP Warning:  Undefined array key "list_name" in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\Validate.class.php on line 161
+[28-Jul-2023 00:53:08 Europe/Berlin] PHP Stack trace:
+[28-Jul-2023 00:53:08 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\singleList.php:0
+[28-Jul-2023 00:53:08 Europe/Berlin] PHP   2. Validate::validateCreateListForm() F:\Semester4\BackEnd\Project\FinalProject\singleList.php:36
+[28-Jul-2023 00:53:08 Europe/Berlin] PHP Warning:  Undefined array key "list_description" in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\Validate.class.php on line 169
+[28-Jul-2023 00:53:08 Europe/Berlin] PHP Stack trace:
+[28-Jul-2023 00:53:08 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\singleList.php:0
+[28-Jul-2023 00:53:08 Europe/Berlin] PHP   2. Validate::validateCreateListForm() F:\Semester4\BackEnd\Project\FinalProject\singleList.php:36
+2023-07-28 00:53:08 - ERROR MESSAGE = List Name is required.
+2023-07-28 00:53:08 - ERROR MESSAGE = List Description is required.
+2023-07-28 00:53:08 - ERROR MESSAGE = List Name is required.
+2023-07-28 00:53:08 - ERROR MESSAGE = List Description is required.
+[28-Jul-2023 00:58:46 Europe/Berlin] PHP Warning:  Undefined array key "list_name" in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\Validate.class.php on line 161
+[28-Jul-2023 00:58:46 Europe/Berlin] PHP Stack trace:
+[28-Jul-2023 00:58:46 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\singleList.php:0
+[28-Jul-2023 00:58:46 Europe/Berlin] PHP   2. Validate::validateCreateListForm() F:\Semester4\BackEnd\Project\FinalProject\singleList.php:36
+[28-Jul-2023 00:58:46 Europe/Berlin] PHP Warning:  Undefined array key "list_description" in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\Validate.class.php on line 169
+[28-Jul-2023 00:58:46 Europe/Berlin] PHP Stack trace:
+[28-Jul-2023 00:58:46 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\singleList.php:0
+[28-Jul-2023 00:58:46 Europe/Berlin] PHP   2. Validate::validateCreateListForm() F:\Semester4\BackEnd\Project\FinalProject\singleList.php:36
+2023-07-28 00:58:46 - ERROR MESSAGE = List Name is required.
+2023-07-28 00:58:46 - ERROR MESSAGE = List Description is required.
+2023-07-28 00:58:46 - ERROR MESSAGE = List Name is required.
+2023-07-28 00:58:46 - ERROR MESSAGE = List Description is required.
+[28-Jul-2023 00:59:51 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php:73
+Stack trace:
+#0 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php(73): PDOStatement->execute()
+#1 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\MovieDAO.class.php(34): PDOAgent->execute()
+#2 F:\Semester4\BackEnd\Project\FinalProject\singleList.php(45): MovieDAO::createMovie('7', 'Whiplash', '5')
+#3 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php on line 73
+[28-Jul-2023 01:02:11 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php:73
+Stack trace:
+#0 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php(73): PDOStatement->execute()
+#1 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\MovieDAO.class.php(34): PDOAgent->execute()
+#2 F:\Semester4\BackEnd\Project\FinalProject\singleList.php(45): MovieDAO::createMovie('7', 'asdfasdf', '3')
+#3 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php on line 73
+[28-Jul-2023 01:15:00 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'movie_name' in 'field list' in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php:73
+Stack trace:
+#0 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php(73): PDOStatement->execute()
+#1 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\MovieDAO.class.php(34): PDOAgent->execute()
+#2 F:\Semester4\BackEnd\Project\FinalProject\singleList.php(45): MovieDAO::createMovie('7', 'Whiplash', '5')
+#3 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php on line 73
+[28-Jul-2023 01:15:30 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'movie_name' in 'field list' in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php:73
+Stack trace:
+#0 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php(73): PDOStatement->execute()
+#1 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\MovieDAO.class.php(34): PDOAgent->execute()
+#2 F:\Semester4\BackEnd\Project\FinalProject\singleList.php(45): MovieDAO::createMovie('7', 'Whiplash', '5')
+#3 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php on line 73
+[28-Jul-2023 01:56:26 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getListName() on bool in F:\Semester4\BackEnd\Project\FinalProject\singleList.php:67
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\singleList.php on line 67
+[28-Jul-2023 01:56:28 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on bool in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:24
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
+[28-Jul-2023 01:56:54 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getUsername() on bool in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php:24
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
+2023-07-28 02:22:01 - ERROR MESSAGE = Movie Name is required.
+2023-07-28 02:22:01 - ERROR MESSAGE = Movie Name is required.

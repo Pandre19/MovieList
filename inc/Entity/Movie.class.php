@@ -1,45 +1,39 @@
 <?php
 
 class Movie{
-
     // attributes
-    private $id = 0;
-    private $username ="";
-    private $email = "";
-    private $password = "";
+    private $movie_id = 0;
+    private $list_id = 0;
+    private $movie_name ="";
+    private $movie_rating = "";
+    private $movie_added_date = "";
 
     // getters
-    function getId() : int{
-        return $this->id;
+    function getMovieId() : int{
+        return $this->movie_id;
     }
-    function getUsername(): string{
-        return $this->username;
+    function getListId() : int{
+        return $this->list_id;
     }
-    function getEmail(): string {
-        return $this->email;
+    function getMovieName(): string{
+        return $this->movie_name;
     }
-    function getPassword(): string{
-        return $this->password;
+    function getMovieRating(): string {
+        return $this->movie_rating;
+    }
+    function getMovieAddedDate(): string{
+        return $this->movie_added_date;
     }
 
     // setters
-    function setUsername($username) {
-        $this->username = $username;
+    function setMovieName($movieName) {
+        $this->movie_name = $movieName;
     }
-
-    function setEmail ($email) {
-        $this->email = $email;
+    function setMovieRating($movieRating) {
+        $this->movie_rating = $movieRating;
     }
-
-    function setPassword($password) {
-        $this->password = $password;
+    function setMovieAddedDate($movieAddedDate) {
+        $this->movie_added_date = $movieAddedDate;
     }
-
-    //verifyPassword
-    function verifyPassword(string $passwordToVerify){
-        return password_verify($passwordToVerify, $this->getPassword());
-    }
-
 }
-
 ?>

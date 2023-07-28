@@ -285,19 +285,24 @@ class Page  {
             <form action="" method="post" id="modalFormAddMovie">
                 <!-- Form -->
                 <div class="form-outline mb-4">
-                    <label for="list_name" class="form-label text-dark">List Name</label>
-                    <input type="text" id="list_name" name="list_name" class="form-control form-control-lg" placeholder="List Name">
+                    <label for="movie_name" class="form-label text-dark">Movie Name</label>
+                    <input type="text" id="movie_name" name="movie_name" class="form-control form-control-lg" placeholder="movie Name">
                 </div>
                 <div class="form-outline mb-4">
-                    <label for="list_description" class="form-label text-dark">Description (max 255 characters)</label>
-                    <textarea type="text" id="list_description" name="list_description" rows="4" placeholder="Description"
-                        maxlength="255" class="form-control form-control-lg"></textarea>
+                    <label for="list_description" class="form-label text-dark">Select Movie Rating</label>
+                    <select class="form-select" size="5" aria-label="Size 3 select example" name="movie_rating">
+                        <option value="1" class="text-dark">1</option>
+                        <option value="2" class="text-dark">2</option>
+                        <option value="3" class="text-dark" selected>3</option>
+                        <option value="4" class="text-dark">4</option>
+                        <option value="5" class="text-dark">5</option>
+                    </select>
                 </div>
                 <!-- Buttons -->
                 <div class="modal-footer">
-                    <input type="hidden" name="action" value="editList">
+                    <input type="hidden" name="action" value="addMovie">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Edit</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
                 </div>
             </form>
         <?php

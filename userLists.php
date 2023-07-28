@@ -59,27 +59,34 @@
                     <?php
                     //Displaying the lists
                         if(isset($MovieListsArray)) {
-                            foreach($MovieListsArray as $List){
-                                echo '<div class="list-container">';
-                                echo "<h2 class='title-list'>
-                                            {$List->getListName()}
-                                    </h2>";
-                                echo "<p class='description'> 
-                                        {$List->getListDescription()}
-                                    </p>";
-                                //Formatting the Creation date
-                                $dateTimeObj = new DateTime($List->getCreatedAt());
-                                $formattedDate = $dateTimeObj->format('m/d/y');
-                                echo "<p class='list-text'>
-                                        <span>Created on: </span> {$formattedDate}
-                                    </p>";
-                                // echo "<p class='list-text'>
-                                //         <span>Average Rating</span> 5.6
-                                //     </p>";
-                                echo "<a href='singleList.php?listId={$List->getListId()}' class='button-list'><i class='fas fa-arrow-right'></i></a>
-                                    </div>";
+                            if(count($MovieListsArray) == 0) {
+                                echo "<h3> 
+                                        Please add a new List
+                                    </h3>";
+                            } else {
+                                foreach($MovieListsArray as $List){
+                                    echo '<div class="list-container">';
+                                    echo "<h2 class='title-list'>
+                                                {$List->getListName()}
+                                        </h2>";
+                                    echo "<p class='description'> 
+                                            {$List->getListDescription()}
+                                        </p>";
+                                    //Formatting the Creation date
+                                    $dateTimeObj = new DateTime($List->getCreatedAt());
+                                    $formattedDate = $dateTimeObj->format('m/d/y');
+                                    echo "<p class='list-text'>
+                                            <span>Created: </span> {$formattedDate}
+                                        </p>";
+                                    // echo "<p class='list-text'>
+                                    //         <span>Average Rating</span> 5.6
+                                    //     </p>";
+                                    echo "<a href='singleList.php?listId={$List->getListId()}' class='button-list'><i class='fas fa-arrow-right'></i></a>
+                                        </div>";
+                                }
                             }
-                        }
+                            
+                        } 
                     ?>
                 </div>
 

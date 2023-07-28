@@ -1,7 +1,5 @@
 <?php
-
     class MovieList{
-
         // attributes
         private $list_id = 0;
         private $user_id = 0;

@@ -68,8 +68,6 @@
             <div class="container">
                 <div class="account-background">
                     <div class="account-left-side">
-                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Account Image" 
-                            class="account-image"> 
                         <div class="quote=wrapper">
                             <h3 class="quote">
                                 "The cinema has no boundary.<br>It is a ribbon of a dream"
