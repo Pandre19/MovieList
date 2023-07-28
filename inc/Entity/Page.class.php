@@ -21,6 +21,9 @@ class Page  {
 
         <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
         <!-- Reference:  https://getbootstrap.com/docs/5.3/components/navbar/-->
         <nav class="navbar fixed-top navbar-expand-lg bg-dark">
@@ -303,6 +306,49 @@ class Page  {
                     <input type="hidden" name="action" value="addMovie">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        <?php
+    }
+
+    static function showEditMovieForm($movieName, $movieRating = null) {
+        ?>  
+        <!-- Showing  -->
+            <?php
+            if (isset(Validate::$valid_status) && isset(Validate::$valid_status['errors'])) {
+                if (count(Validate::$valid_status['errors']) > 0) {
+                $error_message = "ERROR \n";
+                foreach (Validate::$valid_status['errors'] as $name => $message) {
+                    $error_message .= $message . "\n";
+                    error_log(date("Y-m-d H:i:s") . " - ERROR MESSAGE = " . $message . "\n", 3, 'log/error_log.txt');
+                }
+                $error_message_js = json_encode($error_message);
+                ?>
+                <script> alert(<?= $error_message_js ?>); </script>
+            <?php } } ?>
+
+            <form action="" method="post" id="modalFormAddMovie">
+                <!-- Form -->
+                <div class="form-outline mb-4">
+                    <label for="movie_name" class="form-label text-dark">Movie Name</label>
+                    <input type="text" id="movie_name" name="movie_name" class="form-control form-control-lg" placeholder="movie Name"
+                    value="<?= $movieName ?>">
+                </div>
+                <div class="form-outline mb-4">
+                    <label for="list_description" class="form-label text-dark">Select Movie Rating</label>
+                    <select class="form-select" size="5" aria-label="Size 3 select example" name="movie_rating">
+                        <option value="1" class="text-dark" <?= $movieRating == '1' ? 'selected' : ''?> >1</option>
+                        <option value="2" class="text-dark" <?= $movieRating == '2' ? 'selected' : ''?>>2</option>
+                        <option value="3" class="text-dark" <?= $movieRating == '3' ? 'selected' : ''?>>3</option>
+                        <option value="4" class="text-dark" <?= $movieRating == '4' ? 'selected' : ''?>>4</option>
+                        <option value="5" class="text-dark" <?= $movieRating == '5' ? 'selected' : ''?>>5</option>
+                    </select>
+                </div>
+                <!-- Buttons -->
+                <div class="modal-footer">
+                    <input type="hidden" name="action" value="editMovie">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Edit</button>
                 </div>
             </form>
         <?php

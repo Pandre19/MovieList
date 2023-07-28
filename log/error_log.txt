@@ -568,3 +568,10 @@ Stack trace:
   thrown in F:\Semester4\BackEnd\Project\FinalProject\userAccount.php on line 24
 2023-07-28 02:22:01 - ERROR MESSAGE = Movie Name is required.
 2023-07-28 02:22:01 - ERROR MESSAGE = Movie Name is required.
+[28-Jul-2023 04:43:30 Europe/Berlin] PHP Warning:  Undefined array key "movie_name" in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\Validate.class.php on line 187
+[28-Jul-2023 04:43:30 Europe/Berlin] PHP Stack trace:
+[28-Jul-2023 04:43:30 Europe/Berlin] PHP   1. {main}() F:\Semester4\BackEnd\Project\FinalProject\singleList.php:0
+[28-Jul-2023 04:43:30 Europe/Berlin] PHP   2. Validate::validateAddMovieForm() F:\Semester4\BackEnd\Project\FinalProject\singleList.php:57
+2023-07-28 04:43:30 - ERROR MESSAGE = Movie Name is required.
+2023-07-28 04:43:30 - ERROR MESSAGE = Movie Name is required.
+2023-07-28 04:43:30 - ERROR MESSAGE = Movie Name is required.

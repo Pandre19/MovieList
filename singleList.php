@@ -17,6 +17,9 @@ MovieDAO::init();
 
 $singleList = null;
 $moviesArray = null;
+$movieId = null;
+$movieName = null;
+$movieRating = null;
 
 if (LoginManager::verifyLogin()) {
     Page::header("MoviesLists", true, "singleList.css");
@@ -30,6 +33,22 @@ if (LoginManager::verifyLogin()) {
     if(isset($_GET['deleteMovie'])) {
         MovieDAO::deleteMovie($_GET['deleteMovie']);
         header("Location: ".$_SERVER['PHP_SELF'] . "?listId=" . $_GET['listId']);
+    }
+    if(isset($_GET['editMovie'])) {
+        $selectedMovie = MovieDAO::getMovie($_GET['editMovie']);
+        $movieId = $_GET['editMovie'];
+        $movieName = $selectedMovie->getMovieName();
+        $movieRating = $selectedMovie->getMovieRating();
+        echo "
+        <script>
+            function showModal() {
+                $('#editMovieModal').modal('show');
+            }
+        
+            $(document).ready(function() {
+                showModal();
+            });
+            </script>";
     }
 
     if(!empty($_POST)){
@@ -50,6 +69,13 @@ if (LoginManager::verifyLogin()) {
             $validation_errors=Validate::validateAddMovieForm();
             if(empty($validation_errors)){
                 MovieDAO::createMovie($_GET['listId'], $_POST['movie_name'], $_POST['movie_rating']);
+                header("Location: ".$_SERVER['PHP_SELF'] . "?listId=" . $_GET['listId']);
+                exit;
+            } 
+        } else if($_POST['action'] == 'editMovie'){
+            $validation_errors=Validate::validateAddMovieForm();
+            if(empty($validation_errors)){
+                MovieDAO::updateMovie($_POST['movie_name'], $_POST['movie_rating'], $movieId);
                 header("Location: ".$_SERVER['PHP_SELF'] . "?listId=" . $_GET['listId']);
                 exit;
             } 
@@ -89,10 +115,10 @@ $dummy_data = array("title" => "Watch List", "description" => "Movies to watch l
                         //Calculate Average Rating from all the movies rating
                         $average_rating = 0;
                         foreach($moviesArray as $Movie){
-                            $average_rating += number_format(intval($Movie->getMovieRating()), 1);
+                            $average_rating += intval($Movie->getMovieRating());
                         }
                         $average_rating = $average_rating / count($moviesArray);
-                        echo $average_rating;
+                        echo number_format($average_rating, 1);
                     ?>
                 </p>
             </div>
@@ -135,7 +161,7 @@ $dummy_data = array("title" => "Watch List", "description" => "Movies to watch l
                                 </p>";
                             echo "<div class='movie-buttons-wrapper'>
                                 <a href='singleList.php?listId={$_GET['listId']}&deleteMovie={$Movie->getMovieId()}' class='btn button-movie-delete'><i class='fas fa-trash'></i></a>
-                                <a class='btn button-movie-move' href='singleMovie.php'><i class='fas fa-edit'></i></a>
+                                <a href='singleList.php?listId={$_GET['listId']}&editMovie={$Movie->getMovieId()}' class='btn button-movie-move'><i class='fas fa-edit'></i></a>
                             </div></div>";
                         }
                     }
@@ -196,6 +222,21 @@ $dummy_data = array("title" => "Watch List", "description" => "Movies to watch l
                 </div>
                 <div class="modal-body">
                     <?php Page::showAddMovieForm(); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This is a modal from bootstrap. Edit Movie Form  -->
+    <div class="modal fade" id="editMovieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-black" id="staticBackdropLabel">Edit Movie</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <?php Page::showEditMovieForm($movieName, $movieRating); ?>
                 </div>
             </div>
         </div>
