@@ -24,6 +24,16 @@ class MovieDAO   {
         return self::$db->getResultSet();    
     }
 
+    //For the search bar
+    static function searchMovies($listId, $searchTitle) {
+        $selectSQL = "SELECT * FROM Movie WHERE list_id = :listId AND movie_name LIKE :movieName ORDER BY movie_added_date DESC;";
+        self::$db->query($selectSQL);
+        self::$db->bind(":listId", $listId);
+        self::$db->bind(":movieName", '%' . $searchTitle . '%');
+        self::$db->execute();
+        return self::$db->getResultSet();
+    }
+
     static function createMovie($listId, $movieName, $movieRating) {
         $query = "INSERT INTO Movie (list_id, movie_name, movie_rating) VALUES (:listId, :movieName, :movieRating)";
 

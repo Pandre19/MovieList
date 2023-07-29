@@ -575,3 +575,28 @@ Stack trace:
 2023-07-28 04:43:30 - ERROR MESSAGE = Movie Name is required.
 2023-07-28 04:43:30 - ERROR MESSAGE = Movie Name is required.
 2023-07-28 04:43:30 - ERROR MESSAGE = Movie Name is required.
+[29-Jul-2023 21:39:34 Europe/Berlin] PHP Fatal error:  Uncaught DivisionByZeroError: Division by zero in F:\Semester4\BackEnd\Project\FinalProject\singleList.php:129
+Stack trace:
+#0 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\singleList.php on line 129
+[29-Jul-2023 22:35:47 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%'dumb'% ORDER BY movie_added_date DESC' at line 1 in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php:73
+Stack trace:
+#0 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php(73): PDOStatement->execute()
+#1 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\MovieDAO.class.php(33): PDOAgent->execute()
+#2 F:\Semester4\BackEnd\Project\FinalProject\singleList.php(89): MovieDAO::searchMovies('1', 'dumb')
+#3 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php on line 73
+[29-Jul-2023 22:37:17 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php:73
+Stack trace:
+#0 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php(73): PDOStatement->execute()
+#1 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\MovieDAO.class.php(33): PDOAgent->execute()
+#2 F:\Semester4\BackEnd\Project\FinalProject\singleList.php(89): MovieDAO::searchMovies('1', 'dumb')
+#3 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php on line 73
+[29-Jul-2023 22:39:12 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php:73
+Stack trace:
+#0 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php(73): PDOStatement->execute()
+#1 F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\MovieDAO.class.php(33): PDOAgent->execute()
+#2 F:\Semester4\BackEnd\Project\FinalProject\singleList.php(89): MovieDAO::searchMovies('1', 'dumb')
+#3 {main}
+  thrown in F:\Semester4\BackEnd\Project\FinalProject\inc\Utility\PDOAgent.class.php on line 73

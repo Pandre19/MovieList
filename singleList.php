@@ -21,6 +21,8 @@ $movieId = null;
 $movieName = null;
 $movieRating = null;
 
+$searchBarValue = "";
+
 if (LoginManager::verifyLogin()) {
     Page::header("MoviesLists", true, "singleList.css");
 
@@ -72,6 +74,7 @@ if (LoginManager::verifyLogin()) {
                 header("Location: ".$_SERVER['PHP_SELF'] . "?listId=" . $_GET['listId']);
                 exit;
             } 
+        //Edit Movie
         } else if($_POST['action'] == 'editMovie'){
             $validation_errors=Validate::validateAddMovieForm();
             if(empty($validation_errors)){
@@ -79,6 +82,15 @@ if (LoginManager::verifyLogin()) {
                 header("Location: ".$_SERVER['PHP_SELF'] . "?listId=" . $_GET['listId']);
                 exit;
             } 
+        //Searching
+        } else if($_POST['action'] == 'search'){
+            $searchConcept = trim($_POST['searchConcept']);
+            $searchBarValue = $searchConcept;
+            if($searchConcept == ''){
+                $moviesArray = MovieDAO::getMovies($_GET['listId']);
+            } else { 
+                $moviesArray = MovieDAO::searchMovies($_GET['listId'], $searchConcept);
+            }
         } 
     }
 
@@ -113,12 +125,17 @@ $dummy_data = array("title" => "Watch List", "description" => "Movies to watch l
                     <span>Average Rating: </span> 
                     <?php
                         //Calculate Average Rating from all the movies rating
-                        $average_rating = 0;
-                        foreach($moviesArray as $Movie){
-                            $average_rating += intval($Movie->getMovieRating());
+                        if(count($moviesArray) == 0) {
+                            echo "...";
+                        } else {
+                            $average_rating = 0;
+                            foreach($moviesArray as $Movie){
+                                $average_rating += intval($Movie->getMovieRating());
+                            }
+                            $average_rating = $average_rating / count($moviesArray);
+                            echo number_format($average_rating, 1);
                         }
-                        $average_rating = $average_rating / count($moviesArray);
-                        echo number_format($average_rating, 1);
+                        
                     ?>
                 </p>
             </div>
@@ -136,14 +153,29 @@ $dummy_data = array("title" => "Watch List", "description" => "Movies to watch l
             </div>
         </div>
 
+        <div class="search-container mb-4">
+            <form class="search-container" action="" method="post">
+                <input type="hidden" name="action" value="search">
+                <input class="search-bar" name="searchConcept" type="text" placeholder="Search Movie" value=<?= $searchBarValue ?>>
+                <button type="submit"><i class="fas fa-search text-dark"></i></button>
+            </form>
+        </div>
+
         <div class="movies-container">
             <?php
                 //Displaying the movies
                 if(isset($moviesArray)) {
                     if(count($moviesArray) == 0) {
-                        echo "<h3> 
+                        if($searchBarValue == '') {
+                            echo "<h3> 
                                 Please add a new Movie
                             </h3>";
+                        } else {
+                            echo "<h3> 
+                                No movie found
+                            </h3>";
+                        }
+                        
                     } else {
                         foreach($moviesArray as $Movie){
                             echo '<div class="movie-container">';
