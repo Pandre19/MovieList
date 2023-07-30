@@ -15,7 +15,7 @@
     $MovieListsArray = null;
 
     if(LoginManager::verifyLogin()){
-        Page::header("MoviesLists", true, "lists.css");
+        Page::showHeader("MoviesLists", true, "lists.css");
 
         $authUser = UserDAO::getUser($_SESSION['loggedin']);
 
@@ -40,7 +40,7 @@
 
     } else {
         header("Location: userLogin.php");
-        Page::header("MoviesLists", false, "lists.css");
+        Page::showHeader("MoviesLists", false, "lists.css");
     }
 ?>
 

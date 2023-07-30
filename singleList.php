@@ -24,7 +24,7 @@ $movieRating = null;
 $searchBarValue = "";
 
 if (LoginManager::verifyLogin()) {
-    Page::header("MoviesLists", true, "singleList.css");
+    Page::showHeader("MoviesLists", true, "singleList.css");
 
     //GET the movies array from the database
     $moviesArray = MovieDAO::getMovies($_GET['listId']);
@@ -95,7 +95,7 @@ if (LoginManager::verifyLogin()) {
     }
 
 } else {
-    Page::header("MoviesLists", true, "singleList.css");
+    Page::showHeader("MoviesLists", true, "singleList.css");
 }
 
 $dummy_data = array("title" => "Watch List", "description" => "Movies to watch later", "created_at" => "12/12/2020");

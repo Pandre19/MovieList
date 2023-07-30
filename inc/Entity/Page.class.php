@@ -1,14 +1,12 @@
 <?php
 
 class Page  {
-    static function header($title, $isUserLoggedIn = true, $cssFileName = null) { ?>
-
+    static function showHeader($title, $isUserLoggedIn = true, $cssFileName = null) { ?>
         <!doctype html>
         <html lang="en">
         <head>
             <meta charset="utf-8">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-            <!-- <link rel="icon" href="../../img/favicon.ico" type="image/png"> -->
             <link rel="stylesheet" type="text/css" href="css/base.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
             <?php
@@ -39,9 +37,6 @@ class Page  {
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
                             <a class="nav-link active text-white" aria-current="page" href="userLists.php">Lists</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link text-white" href="recommendation.php">Recommendation</a>
                             </li>
                             <li class="nav-item">
                             <a class="nav-link text-white" href="userAccount.php">Account</a>

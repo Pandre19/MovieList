@@ -7,11 +7,10 @@
     require_once("inc/Utility/LoginManager.class.php");
 
     if(LoginManager::verifyLogin()){
-        Page::header("MoviesLists", true, "index.css");
+        Page::showHeader("MoviesLists", true, "index.css");
     } else {
-        Page::header("MoviesLists", false, "index.css");
+        Page::showHeader("MoviesLists", false, "index.css");
     }
-
 ?>
 
         <div class="index-title-wrapper body">

@@ -17,7 +17,7 @@
     $validation_errors_edit_account = null;
 
     if(LoginManager::verifyLogin()){
-        Page::header("MoviesLists", true, "account.css");
+        Page::showHeader("MoviesLists", true, "account.css");
 
         //Get authenticated user object
         $authUser = UserDAO::getUser($_SESSION['loggedin']);

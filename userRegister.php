@@ -10,12 +10,10 @@
     UserDAO::init();
 
     if(LoginManager::verifyLogin()){
-        // UserDAO::init();
-        // $user = UserDAO::getUser($_SESSION['loggedin']);
-        header("Location: index.php");
+        header("Location: TeamNumber09.php");
     } 
 
-    Page::header("Register", false);
+    Page::showHeader("Register", false);
 
     if(!empty($_POST)){
       //get values
