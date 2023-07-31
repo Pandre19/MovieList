@@ -48,13 +48,17 @@
                     $new_user->setPassword($password);
                 }
 
-                try {
-                    UserDAO::updateUser($new_user, $_SESSION['loggedin']);
-                    $_SESSION['loggedin'] = $new_user->getUsername();
-                    header("Location: userAccount.php");
-                    exit();
-                } catch(Exception $e) {
-                    error_log($e->getMessage());
+                if(UserDAO::checkUserAlreadyExists($_POST['username'])) {
+                    echo "<script> alert('User already exists'); </script>";
+                } else {
+                    try {
+                        UserDAO::updateUser($new_user, $_SESSION['loggedin']);
+                        $_SESSION['loggedin'] = $new_user->getUsername();
+                        header("Location: userAccount.php");
+                        exit();
+                    } catch(Exception $e) {
+                        error_log($e->getMessage());
+                    }
                 }
                 
             }

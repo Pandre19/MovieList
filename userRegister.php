@@ -30,7 +30,6 @@
         //Check if there is a user with the same username in database
         if(UserDAO::checkUserAlreadyExists($username)) {
             header("Location: userRegister.php?userExistsError=true");
-            
             exit();
         }
 
